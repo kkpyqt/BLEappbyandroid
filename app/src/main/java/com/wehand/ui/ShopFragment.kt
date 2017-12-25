@@ -1,5 +1,11 @@
 package com.wehand.ui
-
+/*
+实现商城界面首页
+创建日期
+作者：
+修改记录：
+     1.实现界面，及跳转
+     */
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater

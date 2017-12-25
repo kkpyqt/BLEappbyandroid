@@ -1,5 +1,11 @@
 package com.wehand.ui
-
+/*
+实现用户登陆后activy
+创建日期
+作者：
+修改记录：
+     1.实现界面，及跳转
+     */
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -16,7 +22,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     private val KEY_POSITION = "keyPosition"
     //默认打开位置
-    private var navPosition: BottomNavigationPosition = BottomNavigationPosition.USER
+    private var navPosition: BottomNavigationPosition = BottomNavigationPosition.MEASURE
 
     private lateinit var toolbar: Toolbar
 

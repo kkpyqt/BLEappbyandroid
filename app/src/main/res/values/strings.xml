@@ -9,11 +9,20 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name='peripheral_is_not_supported'>无法找到可匹配的蓝牙设备 </string>
-    <string name="uuid_service">00001800-0000-1000-8000-00805f9b34fb</string>
-    <string name="uuid_characteristic">00002a00-0000-1000-8000-00805f9b34fb</string>
-    <string name="uuid_characteristic_config">00002902-0000-1000-8000-00805f9b34fb</string>
+    <string name="uuid_service">“00001800-0000-1000-8000-00805f9b34fb”</string>
+    <string name="uuid_characteristic">“00002a00-0000-1000-8000-00805f9b34fb”</string>
+    <string name="uuid_characteristic_config">“00002902-0000-1000-8000-00805f9b34fb”</string>
     <string name="error_title">Error</string>
     <string name="ble_status_connected">Connected</string>
     <string name="ble_status_disconnected">Disconnected</string>
     <string name="ble_stop_sending_data">STOP_SENDING_DATA</string>
+   <!--login fragment-->
+    <string name="text_name">姓名：</string>
+    <string name="text_passwd">密码：</string>
+    <string name="button_ok">登录</string>
+    <string name="cBox_remember">下次自动登录</string>
+    <string name="tv_forgot">忘记密码</string>
+    <!--measure scan-->
+    <string name="tv_scan">**设备连接中</string>
+    <string name="tv_connect">**设备已连接</string>
 </resources>

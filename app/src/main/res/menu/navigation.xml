@@ -10,10 +10,10 @@
         android:id="@+id/news"
         android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="@string/title_news" />
-    <!--item
+    <item
         android:id="@+id/measure"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_measure" /-->
+        android:title="@string/title_measure" />
 
     <item
         android:id="@+id/shop"
