@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wehand">
-    <uses-permission android:name="android.permission.BLUETOOTH"/> <!--使用蓝牙所需要的权限-->
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/> <!--使用扫描和设置蓝牙的权限（申明这一个权限必须申明上面一个权限）-->
-    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
-    <uses-feature android:name="android.hardware.location.gps" />
+
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
 
     <application
         android:allowBackup="true"
@@ -19,15 +13,17 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.MainActivity">
 
-        <activity
-            android:name="com.wehand.ui.MainActivity">
+        </activity>
+        <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
-
 
 </manifest>

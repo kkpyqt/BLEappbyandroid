@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     android:background="@color/white">
     <!--这里可以不显示-->
+
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,17 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1" />
-
-        <ImageView
-            android:id="@+id/image_logo"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-
-            android:layout_weight="1"
-            android:adjustViewBounds="false"
-
-            android:contentDescription="@string/app_name"
-            android:src="@mipmap/logo" />
 
         <Space
             android:layout_width="wrap_content"
@@ -41,27 +34,120 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <!--实现方式应该是FrameLayout,包含一个占满全部layout的ImageView，一个底部的TextView，一个右上角的用于显示数字的某种view。-->
+
+        <FrameLayout
+            android:id="@+id/bloodpress1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_xueya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="血压测量"
+                app:srcCompat="@drawable/bloodpress" />
+
+            <TextView
+                android:id="@+id/tv_bloodpress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="@string/text_bloodpress"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/bloodsugar"
+            android:layout_width="wrap_content"
+            android:layout_height="196dp">
+
+            <ImageView
+                android:id="@+id/iv_xuetang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/bloodsugar" />
+
+            <TextView
+                android:id="@+id/tv_bloodsugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="@string/bloodsugar"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+    <!--数据分析-->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
 
-        <ImageView
-            android:id="@+id/iv_xueya"
-            android:layout_width="198dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/xueyaji" />
+
+        <!--实现方式应该是FrameLayout,包含一个占满全部layout的ImageView，一个底部的TextView，一个右上角的用于显示数字的某种view。-->
+
+        <FrameLayout
+            android:id="@+id/bloodpress1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_xueya"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="血压测量"
+                app:srcCompat="@drawable/bloodpresslist" />
+
+            <TextView
+                android:id="@+id/tv_bloodpress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="@string/text_bloodpresslist"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
 
 
-        <ImageView
-            android:id="@+id/iv_xuetang"
-            android:layout_width="180dp"
-            android:layout_height="202dp"
-            android:contentDescription="@string/app_name"
-            app:srcCompat="@drawable/xuetanyi" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/bloodsugar"
+            android:layout_width="79dp"
+            android:layout_height="77dp">
+
+            <ImageView
+                android:id="@+id/iv_xuetang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/bloodsugarlist" />
+
+            <TextView
+                android:id="@+id/tv_bloodsugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="@string/bloodsugarlist"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+
+        </FrameLayout>
 
     </LinearLayout>
-
 
 
 </LinearLayout>

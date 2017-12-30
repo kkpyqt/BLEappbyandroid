@@ -13,14 +13,14 @@ import com.wehand.ui.*
 //在navigation.xml 中可以定义每个 fragment 用到的图标
 //中文显示名从R.string.id name 中读取
 enum class BottomNavigationPosition(val position: Int, val id: Int) {
-    USER(0, R.id.user),
+    USER(2, R.id.user),
     NEWS(1, R.id.news),
-    MEASURE(2, R.id.measure),
+    MEASURE(0, R.id.measure),
     SHOP(3, R.id.shop),
 
     PROFILE(4, R.id.profile);
 }
-
+//根据操作栏ID ,得到位置名称
 fun findNavigationPositionById(id: Int): BottomNavigationPosition = when (id) {
     BottomNavigationPosition.USER.id -> BottomNavigationPosition.USER
     BottomNavigationPosition.NEWS.id -> BottomNavigationPosition.NEWS
@@ -29,9 +29,9 @@ fun findNavigationPositionById(id: Int): BottomNavigationPosition = when (id) {
     BottomNavigationPosition.PROFILE.id -> BottomNavigationPosition.PROFILE
 //
    // BottomNavigationPosition.BLE.id -> BottomNavigationPosition.BLE
-    else -> BottomNavigationPosition.USER
+    else -> BottomNavigationPosition.MEASURE
 }
-
+//根据操作栏占据图标，判断要哪个界面实例化
 fun BottomNavigationPosition.createFragment(): Fragment = when (this) {
     BottomNavigationPosition.USER -> UserFragment.newInstance()
     BottomNavigationPosition.NEWS -> NewsFragment.newInstance()

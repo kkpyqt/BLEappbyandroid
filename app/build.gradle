@@ -33,6 +33,16 @@ dependencies {
     implementation 'com.android.support:support-vector-drawable:26.1.0'
 
     implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    ext.anko_version ='0.10.1'
+//    compile 'org.jetbrains.anko:anko:0.5-15'
+    // Anko Layouts
+    compile "org.jetbrains.anko:anko-sdk25:$anko_version" // sdk15, sdk19, sdk21, sdk23 are also available
+    compile "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+    compile "org.jetbrains.anko:anko-coroutines:$anko_version"
+    // 主要为兼容一些控件事件的协程，不过协程coroutines目前还不是kotlin的正式内容
+    compile "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"
+    compile "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

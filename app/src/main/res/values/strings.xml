@@ -16,13 +16,20 @@
     <string name="ble_status_connected">Connected</string>
     <string name="ble_status_disconnected">Disconnected</string>
     <string name="ble_stop_sending_data">STOP_SENDING_DATA</string>
-   <!--login fragment-->
+    <!--login fragment-->
     <string name="text_name">姓名：</string>
     <string name="text_passwd">密码：</string>
     <string name="button_ok">登录</string>
     <string name="cBox_remember">下次自动登录</string>
     <string name="tv_forgot">忘记密码</string>
     <!--measure scan-->
+    <string name="text_bloodpress">血压测量</string>
+    <string name="bloodsugar">血糖测量</string>
+    <string name="text_bloodpresslist">血压测量分析</string>
+    <string name="bloodsugarlist">血糖测量分析</string>
     <string name="tv_scan">**设备连接中</string>
+
     <string name="tv_connect">**设备已连接</string>
+
+    <!---->
 </resources>
