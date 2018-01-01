@@ -77,6 +77,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 //初始化内容框
     private fun initFragment(savedInstanceState: Bundle?) {
         savedInstanceState ?: switchFragment(UserFragment.newInstance(), UserFragment.TAG)
+//    从mainactivity到fragment
+        var bundle=Bundle()
+        bundle.putString("info","张三")
+//        UserFragment.TAG.setArguments(bundle)
     }
 
     /**

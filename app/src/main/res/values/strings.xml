@@ -22,6 +22,12 @@
     <string name="button_ok">登录</string>
     <string name="cBox_remember">下次自动登录</string>
     <string name="tv_forgot">忘记密码</string>
+    <string name="nologin">请输入账户或者密码</string>
+    <string name="loginerror">输入账户或者密码不正确,请重新输入</string>
+    <string name="tv_newuser">快速注册</string>
+    <string name="noequalspwd">两次输入的密码不一次,请重新输入</string>
+    <string name="newscuess">用户新增成功</string>
+    <string name="userexist">用户已存在</string>
     <!--measure scan-->
     <string name="text_bloodpress">血压测量</string>
     <string name="bloodsugar">血糖测量</string>
