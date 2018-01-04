@@ -14,13 +14,6 @@
         android:orientation="vertical"
         android:padding="40dp">
 
-        <TextView
-            android:id="@+id/tv_newuser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:text="TextView" />
-
         <LinearLayout
             android:id="@+id/lin_count"
             android:layout_width="300dp"
@@ -100,7 +93,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="18dp"
             android:background="@color/colorPrimary"
-            android:text="登录"
+            android:text="@string/bt_newuser"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 

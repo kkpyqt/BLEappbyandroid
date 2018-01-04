@@ -13,13 +13,11 @@ import org.jetbrains.anko.toast
 import com.wehand.model.ModelUserInfo
 
 class NewUserActivity : AppCompatActivity() {
-    private var newuser: String? =null
-    private var userpwd: String? =null
+
 
     var dbHandler: DatabaseHandler? = null
-    val userInfo = ModelUserInfo()
-    //    数据列表
-    private var listUserInfo: MutableList<ModelUserInfo> = ArrayList()
+
+
     fun EditText.setTextChangeListener(body: (key: String) -> Unit) {
         addTextChangedListener(object: TextWatcher {
             override fun afterTextChanged(s: Editable?) {
@@ -43,37 +41,18 @@ class NewUserActivity : AppCompatActivity() {
 
     }
     fun  initOperations() {
-        //        值更新事件,检查用户是否存在,没生效
-        et_account.setTextChangeListener {
-            if (this.listUserInfo.any { it.name.equals(et_account.toString()) }) {
-                toast(R.string.userexist)
 
-            }
-
-        }
         regist_button.setOnClickListener {
 
             if (et_account.text.toString().isNotEmpty() && et_password.text.toString().isNotEmpty() && et_password2.text.toString().isNotEmpty()) {
                 if (et_password.text.toString().equals(et_password2.text.toString())) {
                     //新增用户
-                    val username = et_account.text.toString()
-                    val passwd = et_password.text.toString()
-                    val data = ModelUserInfo()
-                    data.name = username
-                    data.passwd = passwd
-//                    要先检查用户是否在用户表中已存在,没检查到是什么原因? TODO
-                    if (this.listUserInfo.any {
-
-                        it.name.equals(et_account.toString())
-
-
-                    }) {
-                        toast(R.string.userexist)
-
-                    } else {
-                        this.dbHandler!!.addUser(data)
-                        toast(R.string.newscuess)
+                    val username = et_account.text.trim().toString()
+                    val passwd = et_password.text.trim().toString()
+                    if (adduser(_name = username,_passwd = passwd) ==1)      {
+                        toast(R.string.addsucess)
                     }
+
 //TODO 后继增加短信验证码支持
                 } else {
                     toast(R.string.noequalspwd)
@@ -85,10 +64,24 @@ class NewUserActivity : AppCompatActivity() {
 
         }
     }
+    fun adduser(_name: String,_passwd: String):Int{
+        //                    要先检查用户是否在用户表中已存在,没检查到是什么原因? TODO
+        if (dbHandler!!.addUser(_name,_passwd)){
+
+            toast(R.string.addsucess)
+            return  1
+
+        }else {
+            toast(R.string.userexist)
+            return 0
+
+        }
+
+    }
     fun initDB() {
         dbHandler = DatabaseHandler(this)
         // 获取已存取数据
-        listUserInfo = dbHandler!!.allUserInfo()
+
 
 
     }
