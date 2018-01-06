@@ -1,4 +1,4 @@
-package com.jonesrandom.sqlite_kotlin.adapter
+package com.wehand.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.row_userinfo.view.*
  * #JanganLupaBahagia
  * 这个是用户信息结果展示
  */
-class DaftarHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+class UserListHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(data: ModelUserInfo, listener: OnItemClickListener, position: Int) = with(itemView) {
 //控件名=图标,用户名,是否当前用户,

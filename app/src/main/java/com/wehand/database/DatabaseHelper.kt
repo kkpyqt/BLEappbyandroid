@@ -30,6 +30,7 @@ class DatabaseHandler(ctx: Context) : SQLiteOpenHelper(ctx,DatabaseHandler.DB_NA
             private val ROW_ISREGIST = "isregist"
             private val ROW_PASSWD = "passwd"
             private val ROW_ISCURRENTUSER ="iscurrentuser"
+            private var databaseOpen: Boolean = false
 // writableDatabase 跟这个有关
 //            private lateinit var database: SQLiteDatabase
 //            private var databaseOpen: Boolean = false
@@ -61,16 +62,32 @@ class DatabaseHandler(ctx: Context) : SQLiteOpenHelper(ctx,DatabaseHandler.DB_NA
 
 //        新增操作
         fun addUser(_name: String,_passwd: String): Boolean {
-            val db = this.writableDatabase
-            val values = ContentValues()
-//            设置构造器与表模型的对应关系
-            values.put(ROW_NAME,_name)
 
-            values.put(ROW_PASSWD, _passwd)
-            val _success = db.insert(TABLE_NAME, null, values)
-            db.close()
-            Log.v("InsertedId", "$_success")
-            return (Integer.parseInt("$_success") != -1)
+            val db = this.writableDatabase
+//    判断用户是否存在
+            val selectQuery = "SELECT  * FROM $TABLE_NAME WHERE $ROW_NAME = \"${_name.toString()}\" LIMIT 1 "
+//    Log.e("getuserby name",selectQuery)
+            val cursor = db.rawQuery(selectQuery, null)
+            if (cursor.count == 1){
+                db.close()
+                return false
+            }else {
+//                用户名不存在则执行新增操作
+
+                val values = ContentValues()
+//            设置构造器与表模型的对应关系
+                values.put(ROW_NAME, _name)
+
+                values.put(ROW_PASSWD, _passwd)
+//      其它字段要先设默认值,减少NUll 值风险
+                values.put(ROW_ISCURRENTUSER, "N")
+                values.put(ROW_ISREGIST, "N")
+                values.put(ROW_ISREMEMBER, "N")
+                val _success = db.insert(TABLE_NAME, null, values)
+                db.close()
+                Log.v("InsertedId", "$_success")
+                return (Integer.parseInt("$_success") != -1)
+            }
         }
 //获取指定ID  的用户数据
         fun getuserInfobyId(_id: Int): ModelUserInfo {
@@ -188,6 +205,15 @@ class DatabaseHandler(ctx: Context) : SQLiteOpenHelper(ctx,DatabaseHandler.DB_NA
             val _success = db.delete(TABLE_NAME, null, null).toLong()
             db.close()
             return Integer.parseInt("$_success") != -1
+        }
+        fun closeDatabase() {
+            val database = this.writableDatabase
+            if (database.isOpen && databaseOpen) {
+                database.close()
+                databaseOpen = false
+
+                Log.i("Database" , "Database close")
+            }
         }
 }
 

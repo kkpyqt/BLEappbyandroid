@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
-        android:text="@string/tv_newuser" />
+        android:text="@string/tv_newuser"
+        android:textColor="@color/blue" />
 
     <LinearLayout
         android:id="@+id/lin_count"
@@ -102,7 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         android:layout_weight="1"
-        android:gravity="center_vertical"
+        android:gravity="bottom|center"
         android:text="Copyright © Wehand"
         android:textSize="14sp" />
 </LinearLayout>

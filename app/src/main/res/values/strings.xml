@@ -1,4 +1,5 @@
 <resources>
+    <!--主界面首页-->
     <string name="app_name">永诺医学</string>
     <string name="title_user">用户列表</string>
     <string name="title_news">健康知识</string>
@@ -6,7 +7,7 @@
     <string name="title_shop">商城</string>
     <string name="title_profile">设置</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- 测量页面1 -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name='peripheral_is_not_supported'>无法找到可匹配的蓝牙设备 </string>
     <string name="uuid_service">“00001800-0000-1000-8000-00805f9b34fb”</string>
@@ -16,7 +17,7 @@
     <string name="ble_status_connected">Connected</string>
     <string name="ble_status_disconnected">Disconnected</string>
     <string name="ble_stop_sending_data">STOP_SENDING_DATA</string>
-    <!--login fragment-->
+    <!--login fragment 登陆界面-->
     <string name="text_name">姓名：</string>
     <string name="text_passwd">密码：</string>
     <string name="button_ok">登录</string>
@@ -26,18 +27,26 @@
     <string name="loginsucess">输入账户或者密码校验成功</string>
     <string name="loginerror">输入账户或者密码不正确,请重新输入</string>
     <string name="tv_newuser">快速注册</string>
+    <!--用户注册-->
     <string name="noequalspwd">两次输入的密码不一次,请重新输入</string>
     <string name="addsucess">用户新增成功</string>
     <string name="userexist">用户已存在</string>
     <string name="bt_newuser">用户新增</string>
-    <!--measure scan-->
+    <!--measure scan 测量首页-->
     <string name="text_bloodpress">血压测量</string>
     <string name="bloodsugar">血糖测量</string>
-    <string name="text_bloodpresslist">血压测量分析</string>
-    <string name="bloodsugarlist">血糖测量分析</string>
+    <string name="text_bloodpresslist">   血压分析   </string>
+    <string name="bloodsugarlist">血糖分析   </string>
     <string name="tv_scan">**设备连接中</string>
 
     <string name="tv_connect">**设备已连接</string>
 
-    <!---->
+    <!--HightPressTipsActivity  高血压常规知识-->
+
+    <!--HightSugarTipsActivity  高血糖压常规知识-->
+    <!--AboutUsActivity 关于我们-->
+
+    <!--UserRequstionActivity 意见反馈-->
+    <!--LangSetActivity 语言设置-->
+
 </resources>

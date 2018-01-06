@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".ui.MainActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.NewUserActivity"></activity>
+        <activity android:name=".ui.NewUserActivity" />
+        <activity android:name=".ui.HightPressTipsActivity" />
+        <activity android:name=".ui.HightSugarTipsActivity" />
+        <activity android:name=".ui.AboutUsActivity" />
+        <activity android:name=".ui.UserRequstionActivity" />
+        <activity android:name=".ui.LangSetActivity" />
+        <activity android:name=".ui.UserDetailActivity"></activity>
     </application>
 
 </manifest>

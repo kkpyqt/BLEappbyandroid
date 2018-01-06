@@ -1,4 +1,4 @@
-package com.jonesrandom.sqlite_kotlin.adapter
+package com.wehand.adapter
 
 import com.wehand.model.ModelUserInfo
 

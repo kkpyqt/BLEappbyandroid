@@ -1,5 +1,6 @@
 package com.wehand.ui
 //注册用户界面
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -11,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_newuser.*
 import org.jetbrains.anko.toast
 
 import com.wehand.model.ModelUserInfo
+import kotlinx.android.synthetic.main.activity_login.*
 
 class NewUserActivity : AppCompatActivity() {
 
@@ -44,20 +46,25 @@ class NewUserActivity : AppCompatActivity() {
 
         regist_button.setOnClickListener {
 
-            if (et_account.text.toString().isNotEmpty() && et_password.text.toString().isNotEmpty() && et_password2.text.toString().isNotEmpty()) {
-                if (et_password.text.toString().equals(et_password2.text.toString())) {
+            if (et_newaccount.text.toString().isNotEmpty() && et_newpassword.text.toString().isNotEmpty() && et_newpassword2.text.toString().isNotEmpty()) {
+                if (et_newpassword.text.toString().equals(et_newpassword2.text.toString())) {
                     //新增用户
-                    val username = et_account.text.trim().toString()
-                    val passwd = et_password.text.trim().toString()
+                    val username = et_newaccount.text.trim().toString()
+                    val passwd = et_newpassword.text.trim().toString()
+                    //新增前先检查用户是否存在TODO if
                     if (adduser(_name = username,_passwd = passwd) ==1)      {
                         toast(R.string.addsucess)
+//                        TODO 自动跳转到首页
+                        val intent = Intent(this, LoginActivity::class.java)
+                        intent.putExtra("name", et_newaccount.text.toString())
+                        startActivity(intent)
                     }
 
 //TODO 后继增加短信验证码支持
                 } else {
                     toast(R.string.noequalspwd)
-                    et_password.text = null
-                    et_password2.text = null
+                    et_newpassword.text = null
+                    et_newpassword2.text = null
 
                 }
             }

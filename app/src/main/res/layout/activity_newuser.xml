@@ -29,7 +29,7 @@
                 android:layout_marginRight="15dp"
                 android:src="@drawable/account" />
             <EditText
-                android:id="@+id/et_account"
+                android:id="@+id/et_newaccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -52,7 +52,7 @@
                 android:layout_marginRight="15dp"
                 android:src="@drawable/password"/>
             <EditText
-                android:id="@+id/et_password"
+                android:id="@+id/et_newpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
@@ -75,15 +75,16 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="15dp"
                 android:src="@drawable/password"/>
+
             <EditText
-                android:id="@+id/et_password2"
+                android:id="@+id/et_newpassword2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:hint="账户密码"
-                android:password="true"
+                android:hint="重输账户密码"
                 android:maxLength="11"
-                android:textSize="16sp"/>
+                android:password="true"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <Button
@@ -98,14 +99,6 @@
             android:textSize="18sp" />
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="35dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="Copyright © Wehand"
-            android:textSize="14sp" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
